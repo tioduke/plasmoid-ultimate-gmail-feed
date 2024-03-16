@@ -10,6 +10,9 @@ set(ultimategmailfeedplugin_SRCS
     notification.cpp
 )
 
+
+set(QML_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib/qt/qml)
+
 install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/private/ultimategmailfeed)
 add_library(ultimategmailfeedplugin SHARED ${ultimategmailfeedplugin_SRCS})
 
