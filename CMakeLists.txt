@@ -1,24 +1,26 @@
 project(ultimategmailfeed)
 
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.5.0)
 
-set(QT_MIN_VERSION "5.3.0")
-set(KF5_MIN_VERSION "5.0.0")
+set(QT_MIN_VERSION "6.6.2")
+set(KF6_MIN_VERSION "6.0.0")
 
 find_package(ECM 0.0.11 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-include(KDEInstallDirs)
+include(KDEInstallDirs6)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Quick)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Plasma)
+find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Quick)
+find_package(Plasma ${KF6_MIN_VERSION} REQUIRED COMPONENTS Plasma)
 
 plasma_install_package(package org.kde.plasma.ultimategmailfeed)
- 
+
 add_subdirectory( plugin )
 add_subdirectory( icons )
+
+set(KNOTIFYRC_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/share/knotifications6)
 
 install(FILES ultimategmailfeed.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 

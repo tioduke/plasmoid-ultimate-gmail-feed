@@ -23,7 +23,7 @@
 NetworkStatus::NetworkStatus(QObject *parent)
     : QObject(parent)
 {
-    connect(&m_networkConfig, SIGNAL(onlineStateChanged(bool)), this, SIGNAL(isOnlineChanged()));
+    connect(QNetworkInformation::instance(), SIGNAL(reachabilityChanged(bool)), this, SIGNAL(isOnlineChanged()));
 }
 
 NetworkStatus::~NetworkStatus()

@@ -3,28 +3,27 @@
         "Authors": [
             {
                 "Email": "intika.dev@gmail.com",
-                "Name": "intika"
+                "Name": "Intika"
             }
         ],
         "Category": "Online Services",
         "Dependencies": [
         ],
-        "Description": "Ultimate Gmail Atom Feed",
+        "Description": "Gmail Atom Feed",
         "Description[fr]": "Ultimate Flux Atom Gmail",
         "EnabledByDefault": true,
         "Icon": "ultimategmailfeed",
         "Id": "org.kde.plasma.ultimategmailfeed",
         "License": "GPL",
-        "Name": "Ultimate Gmail Feed",
+        "Name": "Gmail Feed",
         "Name[fr]": "Ultimate Flux Gmail",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
-        "Version": "2.1",
-        "Website": "https://github.com/intika/ultimategmailfeed"
+        "Version": "2.2",
+        "Website": "https://github.com/intika/gmailfeed"
     },
-    "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DefaultSize": "200,200",
-    "X-Plasma-MainScript": "ui/main.qml",
-    "X-Plasma-NotificationArea": "true"
+    "X-Plasma-NotificationArea": "true",
+    "X-Plasma-API-Minimum-Version": "6.0"
 }

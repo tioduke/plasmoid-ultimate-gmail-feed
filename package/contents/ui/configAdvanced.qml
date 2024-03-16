@@ -24,7 +24,7 @@ import QtQuick.Controls 1.2
 import QtQuick.Layouts 1.0
 import QtQuick.Layouts 1.0 as QtLayouts
 import QtQuick.Controls 1.0 as QtControls
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components as PlasmaComponents
 
 Item {
     id: generalPage

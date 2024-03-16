@@ -19,31 +19,32 @@
  *********************************************************************************/
 
 import QtQuick 2.0
-import QtQuick.XmlListModel 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.private.ultimategmailfeed 0.1
+import QtQml.XmlListModel 2.0
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasma5support as Plasma5Support
+import org.kde.plasma.plasmoid
+import org.kde.plasma.private.ultimategmailfeed
 
-Item {
+PlasmoidItem {
     id: mainItem
     
     // Updater 1/3 ==================================================================================================================================
     property string updateResponse;
-    property string currentVersion: '2.1';
+    property string currentVersion: '2.2';
     property bool checkUpdateStartup: Plasmoid.configuration.checkUpdateStartup
     // ==============================================================================================================================================
     
     property string subtext: ""
     property string title: Plasmoid.title
         
-    Plasmoid.toolTipSubText: subtext
+    toolTipSubText: subtext
     Plasmoid.icon: xmlModel.count > 0 ? "mail-unread-new" : "mail-unread"
-    Plasmoid.compactRepresentation: CompactRepresentation {}
-    Plasmoid.fullRepresentation: FullRepresentation {}
-    Plasmoid.switchWidth: units.gridUnit * 8
-    Plasmoid.switchHeight: units.gridUnit * 8
+    compactRepresentation: CompactRepresentation {}
+    fullRepresentation: FullRepresentation {}
+    switchWidth: units.gridUnit * 8
+    switchHeight: units.gridUnit * 8
     
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
             id: executable
             engine: "executable"
             connectedSources: []
@@ -136,7 +137,7 @@ Item {
     Timer {
         id: polltimer
         repeat: true
-        //triggeredOnStart: true
+        triggeredOnStart: true
         interval: plasmoid.configuration.pollinterval * 60000
         onTriggered: autoOrNot()
     }
@@ -174,7 +175,7 @@ Item {
     
     // Updater 2/3 ==================================================================================================================================
     
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: executableNotification
         engine: "executable"
         onNewData: disconnectSource(sourceName) // cmd finished
@@ -240,15 +241,32 @@ Item {
         
     }
     
+    Plasmoid.contextualActions: [
+        PlasmaCore.Action {
+            text: i18n("Open inbox")
+            icon.name: "folder-mail"
+            onTriggered: action_openInbox()
+        },
+        PlasmaCore.Action {
+            text: i18n("Check mail")
+            icon.name: "mail-receive"
+            separator: true
+            onTriggered: action_checkMail()
+        },
+        // Updater 3/3 ==============================================================================================================================
+        PlasmaCore.Action {
+            text: i18n("Check for updates on github")
+            icon.name: "view-grid"
+            separator: true
+            onTriggered: action_checkUpdate()
+        }
+        // ==========================================================================================================================================
+    ]
+    
     Component.onCompleted: { 
         plasmoid.status = PlasmaCore.Types.PassiveStatus
-        plasmoid.setAction("openInbox", i18n("Open inbox"), "folder-mail")
-        plasmoid.setAction("checkMail", i18n("Check mail"), "mail-receive")
-        plasmoid.setActionSeparator("separator0")
 
         // Updater 3/3 ==============================================================================================================================
-        plasmoid.setAction("checkUpdate", i18n("Check for updates on github"), "view-grid");
-        plasmoid.setActionSeparator("separator1")
         if (checkUpdateStartup) {timerStartUpdater.start();}
         // ==========================================================================================================================================
         

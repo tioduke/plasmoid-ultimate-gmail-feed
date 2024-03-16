@@ -33,5 +33,5 @@ Notification::~Notification()
 
 void Notification::send(const QString &eventId, const QString &title, const QString &text, const QString &iconName, const QString &componentName) 
 {
-    KNotification::event(eventId, title, text, iconName, 0L, KNotification::CloseOnTimeout, componentName);
+    KNotification::event(eventId, title, text, iconName, KNotification::CloseOnTimeout, componentName);
 }

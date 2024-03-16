@@ -21,7 +21,7 @@
 #ifndef NETWORKSTATUS_H
 #define NETWORKSTATUS_H
 
-#include <QNetworkConfigurationManager>
+#include <QNetworkInformation>
 
 class NetworkStatus : public QObject
 {
@@ -33,13 +33,10 @@ public:
     explicit NetworkStatus(QObject *parent = 0);
     ~NetworkStatus();
     
-    bool isOnline() const {return m_networkConfig.isOnline();}
+    bool isOnline() const {return QNetworkInformation::instance()->reachability() == QNetworkInformation::Reachability::Online;}
     
 Q_SIGNALS:
     void isOnlineChanged();
-    
-private:
-    QNetworkConfigurationManager m_networkConfig;
 };
 
 #endif

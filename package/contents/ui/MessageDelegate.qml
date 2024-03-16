@@ -19,8 +19,8 @@
  *********************************************************************************/
 
 import QtQuick 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.plasmoid
 
 PlasmaComponents.ListItem {
     id: listItem

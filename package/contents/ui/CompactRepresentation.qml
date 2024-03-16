@@ -19,10 +19,10 @@
  *********************************************************************************/
 
 import QtQuick 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.plasmoid 2.0
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasmoid
 
-PlasmaCore.IconItem {
+Kirigami.Icon {
     
     property bool leftclickCheck: Plasmoid.configuration.leftclickCheck
     property bool middleClickMail: Plasmoid.configuration.middleClickMail
