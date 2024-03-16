@@ -23,7 +23,7 @@ import QtQml.XmlListModel
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.plasma.plasmoid
-import org.kde.plasma.private.ultimategmailfeed 0.1
+import org.kde.plasma.private.ultimategmailfeed
 
 PlasmoidItem {
     id: mainItem
