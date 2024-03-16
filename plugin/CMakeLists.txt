@@ -1,7 +1,6 @@
+add_definitions(-DBUILD_WITH_QT6=ON)
 add_definitions(-DTRANSLATION_DOMAIN="plasma_applet_org.kde.plasma.ultimategmailfeed")
 option (USE_QT6 "Use Qt6 instead of Qt5" ON)
-
-set(BUILD_WITH_QT6 ON)
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Network)
 find_package(KF6Notifications)
