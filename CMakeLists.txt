@@ -2,7 +2,7 @@ project(ultimategmailfeed)
 
 cmake_minimum_required(VERSION 3.5.0)
 
-add_definitions(-DBUILD_WITH_QT6=ON)
+option(BUILD_WITH_QT6 "Use Qt6 instead of Qt5" ON)
 
 set(QT_MIN_VERSION "6.6.2")
 set(KF6_MIN_VERSION "6.0.0")
