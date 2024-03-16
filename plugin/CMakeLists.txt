@@ -1,6 +1,7 @@
 add_definitions(-DTRANSLATION_DOMAIN="plasma_applet_org.kde.plasma.ultimategmailfeed")
 option (USE_QT6 "Use Qt6 instead of Qt5" ON)
-option (BUILD_WITH_QT6 "Use Qt6 instead of Qt5" ON)
+
+set(BUILD_WITH_QT6 ON)
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Network)
 find_package(KF6Notifications)
@@ -10,8 +11,6 @@ set(ultimategmailfeedplugin_SRCS
     networkstatus.cpp
     notification.cpp
 )
-
-
 set(QML_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib/qt/qml)
 
 install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/private/ultimategmailfeed)
