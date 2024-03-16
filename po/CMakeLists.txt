@@ -6,6 +6,7 @@ IF(NOT GETTEXT_MSGFMT_EXECUTABLE)
                  NOTE: msgfmt not found. Translations will *not* be installed
 ------")
 ELSE(NOT GETTEXT_MSGFMT_EXECUTABLE)
+        set(LOCALE_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/share/locale)
  
         SET(catalogname plasma_applet_org.kde.plasma.ultimategmailfeed)
  
