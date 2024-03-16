@@ -1,4 +1,3 @@
-add_definitions(-DBUILD_WITH_QT6=ON)
 add_definitions(-DTRANSLATION_DOMAIN="plasma_applet_org.kde.plasma.ultimategmailfeed")
 option (USE_QT6 "Use Qt6 instead of Qt5" ON)
 
