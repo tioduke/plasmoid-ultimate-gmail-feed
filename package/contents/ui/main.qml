@@ -19,11 +19,11 @@
  *********************************************************************************/
 
 import QtQuick 2.0
-import QtQml.XmlListModel 2.0
+import QtQml.XmlListModel
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.plasma.plasmoid
-import org.kde.plasma.private.ultimategmailfeed
+import org.kde.plasma.private.ultimategmailfeed 0.1
 
 PlasmoidItem {
     id: mainItem
