@@ -25,8 +25,9 @@ import QtQuick.Layouts 1.0
 import QtQuick.Layouts 1.0 as QtLayouts
 import QtQuick.Controls 1.0 as QtControls
 import org.kde.plasma.components as PlasmaComponents
+import org.kde.kcmutils as KCM
 
-Item {
+KCM.SimpleKCM {
     id: generalPage
     
     width: childrenRect.width

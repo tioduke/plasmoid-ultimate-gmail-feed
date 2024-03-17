@@ -16,8 +16,9 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.4
+import org.kde.kcmutils as KCM
 
-Item {
+KCM.SimpleKCM {
     id: configPageUpdater
     
     property alias cfg_checkUpdateStartup: checkUpdateStartupBox.checked
@@ -34,14 +35,14 @@ Item {
                     text: i18n("Plasmoid: Ultimate Gmail Feed\n")
                 }
                 Label {
-                    text: i18n("Version: 2.1")
+                    text: i18n("Version: 2.2")
                 }
                 Label {
-                    text: i18n("Author: Intika")
+                    text: i18n("Author: TioDuke")
                 }
                 TextField {
                     Layout.minimumWidth: 450
-                    text: 'https://github.com/intika/Ultimate-Gmail-Feed/'
+                    text: 'https://github.com/tioduke/plasmoid-ultimate-gmail-feed/'
                 }
                 CheckBox {
                     id: checkUpdateStartupBox
