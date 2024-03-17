@@ -202,14 +202,12 @@ PlasmoidItem {
     function updaterNotification(notifyUpdated) {
         var xhr = new XMLHttpRequest;
         xhr.responseType = 'text';
-        xhr.open("GET", "https://raw.githubusercontent.com/intika/Ultimate-Gmail-Feed/master/version");
+        xhr.open("GET", "https://raw.githubusercontent.com/tioduke/plasmoid-ultimate-gmail-feed/master/version");
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE) {
                 updateResponse = xhr.responseText;
                 console.log('.'+updateResponse+'.');
                 console.log('.'+currentVersion+'.');
-                //console.log('.'+xhr.status+'.');
-                //console.log('.'+xhr.statusText+'.');
                 if (updateResponse.localeCompare(currentVersion) && updateResponse.localeCompare('') && updateResponse.localeCompare('404: Not Found\n')) {
                     availableUpdate();
                 } else if (notifyUpdated) {

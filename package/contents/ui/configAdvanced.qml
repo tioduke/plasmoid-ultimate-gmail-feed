@@ -56,214 +56,204 @@ KCM.SimpleKCM {
                 text: i18n("Middle click open inbox application/link")                            
             }
         
-            RowLayout {
- 
-                QtControls.Label {
-                    text: i18n("Popup height (work outside system tray) : ")
+            Kirigami.FormLayout { 
+                RowLayout {
+                    QtControls.Label {
+                        text: i18n("Popup height (work outside system tray) : ")
+                    }
+    
+                    QtControls.SpinBox {
+                        id: popupHeight
+                        editable: true
+                        validator: RegularExpressionValidator {
+                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                        }
+                        textFromValue: function(value) {
+                            return value+"px";
+                        }
+                        valueFromText: function(text) {
+                            return text.split(" ")[0].split("px")[0];
+                        }
+                        from: 1
+                        to: 9999
+                    }
                 }
- 
-                QtControls.SpinBox {
-                    id: popupHeight
-                    editable: true
-                    validator: RegularExpressionValidator {
-                        regularExpression: /[0-9]?[0-9]{3}[ ]?px/
-                    }
-                    textFromValue: function(value) {
-                        return value+"px";
-                    }
-                    valueFromText: function(text) {
-                        return text.split(" ")[0].split("px")[0];
-                    }
-                    from: 1
-                    to: 9999
-                }
-                
-            }
             
-            RowLayout {
-            
-                QtControls.Label {
-                    text: i18n("Popup width (work outside system tray) : ")
-                }
+                RowLayout {
+                    QtControls.Label {
+                        text: i18n("Popup width (work outside system tray) : ")
+                    }
 
-                QtControls.SpinBox {
-                    id: popupWidth
-                    editable: true
-                    validator: RegularExpressionValidator {
-                        regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                    QtControls.SpinBox {
+                        id: popupWidth
+                        editable: true
+                        validator: RegularExpressionValidator {
+                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                        }
+                        textFromValue: function(value) {
+                            return value+"px";
+                        }
+                        valueFromText: function(text) {
+                            return text.split(" ")[0].split("px")[0];
+                        }
+                        from: 1
+                        to: 9999
                     }
-                    textFromValue: function(value) {
-                        return value+"px";
-                    }
-                    valueFromText: function(text) {
-                        return text.split(" ")[0].split("px")[0];
-                    }
-                    from: 1
-                    to: 9999
                 }
-                
-            }
         
-            RowLayout {
-            
-                QtControls.Label {
-                    text: i18n("Mail line height : ")
-                }
+                RowLayout {
+                    QtControls.Label {
+                        text: i18n("Mail line height : ")
+                    }
 
-                QTCotrols.SpinBox {
-                    id: lineHeight
-                    editable: true
-                    validator: RegularExpressionValidator {
-                        regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                    QTCotrols.SpinBox {
+                        id: lineHeight
+                        editable: true
+                        validator: RegularExpressionValidator {
+                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                        }
+                        textFromValue: function(value) {
+                            return value+"px";
+                        }
+                        valueFromText: function(text) {
+                            return text.split(" ")[0].split("px")[0];
+                        }
+                        from: 1
+                        to: 9999
                     }
-                    textFromValue: function(value) {
-                        return value+"px";
-                    }
-                    valueFromText: function(text) {
-                        return text.split(" ")[0].split("px")[0];
-                    }
-                    from: 1
-                    to: 9999
                 }
-                
-            }
         
-            RowLayout {
-            
-                QtControls.Label {
-                    text: i18n("Mail line width : ")
+                RowLayout {
+                    QtControls.Label {
+                        text: i18n("Mail line width : ")
+                    }
+                    
+                    Kirigami.FormLayout {
+                        ColumnLayout {
+                            
+                            QtControls.CheckBox {
+                                id: invertMailListCheckbox
+                                text: i18n("Invert mail list order")                            
+                            }
+                    
+                            QtControls.CheckBox {
+                                id: leftclickCheckCheckbox
+                                text: i18n("Check mailbox on left click")
+                            }
+                        
+                            QtControls.CheckBox {
+                                id: middleClickMailCheckbox
+                                text: i18n("Middle click open inbox application/link")                            
+                            }
+                        
+                            Kirigami.FormLayout {
+                                RowLayout {
+                                    QtControls.Label {
+                                        text: i18n("Popup height (work outside system tray) : ")
+                                    }
+
+                                    QtControls.SpinBox {
+                                        id: popupHeight
+                                        editable: true
+                                        validator: RegularExpressionValidator {
+                                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                                        }
+                                        textFromValue: function(value) {
+                                            return value+"px";
+                                        }
+                                        valueFromText: function(text) {
+                                            return text.split(" ")[0].split("px")[0];
+                                        }
+                                        from: 1
+                                        to: 9999
+                                    }
+                                }
+                            
+                                RowLayout {
+                                    QtControls.Label {
+                                        text: i18n("Popup width (work outside system tray) : ")
+                                    }
+
+                                    QtControls.SpinBox {
+                                        id: popupWidth
+                                        editable: true
+                                        validator: RegularExpressionValidator {
+                                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                                        }
+                                        textFromValue: function(value) {
+                                            return value+"px";
+                                        }
+                                        valueFromText: function(text) {
+                                            return text.split(" ")[0].split("px")[0];
+                                        }
+                                        from: 1
+                                        to: 9999
+                                    }
+                                }
+                        
+                                RowLayout {
+                                    QtControls.Label {
+                                        text: i18n("Mail line height : ")
+                                    }
+
+                                    QTCotrols.SpinBox {
+                                        id: lineHeight
+                                        editable: true
+                                        validator: RegularExpressionValidator {
+                                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                                        }
+                                        textFromValue: function(value) {
+                                            return value+"px";
+                                        }
+                                        valueFromText: function(text) {
+                                            return text.split(" ")[0].split("px")[0];
+                                        }
+                                        from: 1
+                                        to: 9999
+                                    }
+                                }
+                        
+                                RowLayout { 
+                                    QtControls.Label {
+                                        text: i18n("Mail line width : ")
+                                    }
+
+                                    QTCotrols.SpinBox {
+                                        id: lineWidth
+                                        editable: true
+                                        validator: RegularExpressionValidator {
+                                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                                        }
+                                        textFromValue: function(value) {
+                                            return value+"px";
+                                        }
+                                        valueFromText: function(text) {
+                                            return text.split(" ")[0].split("px")[0];
+                                        }
+                                        from: 1
+                                        to: 9999
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    QTCotrols.SpinBox {
+                        id: lineWidth
+                        editable: true
+                        validator: RegularExpressionValidator {
+                            regularExpression: /[0-9]?[0-9]{3}[ ]?px/
+                        }
+                        textFromValue: function(value) {
+                            return value+"px";
+                        }
+                        valueFromText: function(text) {
+                            return text.split(" ")[0].split("px")[0];
+                        }
+                        from: 1
+                        to: 9999
+                    }
                 }
-                
-                ColumnLayout {
-                    
-                    QtControls.CheckBox {
-                        id: invertMailListCheckbox
-                        text: i18n("Invert mail list order")                            
-                    }
-            
-                    QtControls.CheckBox {
-                        id: leftclickCheckCheckbox
-                        text: i18n("Check mailbox on left click")
-                    }
-                
-                    QtControls.CheckBox {
-                        id: middleClickMailCheckbox
-                        text: i18n("Middle click open inbox application/link")                            
-                    }
-                
-                    RowLayout {
-                    
-                        QtControls.Label {
-                            text: i18n("Popup height (work outside system tray) : ")
-                        }
-
-                        QtControls.SpinBox {
-                            id: popupHeight
-                            editable: true
-                            validator: RegularExpressionValidator {
-                                regularExpression: /[0-9]?[0-9]{3}[ ]?px/
-                            }
-                            textFromValue: function(value) {
-                                return value+"px";
-                            }
-                            valueFromText: function(text) {
-                                return text.split(" ")[0].split("px")[0];
-                            }
-                            from: 1
-                            to: 9999
-                        }
-                        
-                    }
-                    
-                    RowLayout {
-                    
-                        QtControls.Label {
-                            text: i18n("Popup width (work outside system tray) : ")
-                        }
-
-                        QtControls.SpinBox {
-                            id: popupWidth
-                            editable: true
-                            validator: RegularExpressionValidator {
-                                regularExpression: /[0-9]?[0-9]{3}[ ]?px/
-                            }
-                            textFromValue: function(value) {
-                                return value+"px";
-                            }
-                            valueFromText: function(text) {
-                                return text.split(" ")[0].split("px")[0];
-                            }
-                            from: 1
-                            to: 9999
-                        }
-                        
-                    }
-                
-                    RowLayout {
-                    
-                        QtControls.Label {
-                            text: i18n("Mail line height : ")
-                        }
-
-                        QTCotrols.SpinBox {
-                            id: lineHeight
-                            editable: true
-                            validator: RegularExpressionValidator {
-                                regularExpression: /[0-9]?[0-9]{3}[ ]?px/
-                            }
-                            textFromValue: function(value) {
-                                return value+"px";
-                            }
-                            valueFromText: function(text) {
-                                return text.split(" ")[0].split("px")[0];
-                            }
-                            from: 1
-                            to: 9999
-                        }
-                        
-                    }
-                
-                    RowLayout {
-                    
-                        QtControls.Label {
-                            text: i18n("Mail line width : ")
-                        }
-
-                        QTCotrols.SpinBox {
-                            id: lineWidth
-                            editable: true
-                            validator: RegularExpressionValidator {
-                                regularExpression: /[0-9]?[0-9]{3}[ ]?px/
-                            }
-                            textFromValue: function(value) {
-                                return value+"px";
-                            }
-                            valueFromText: function(text) {
-                                return text.split(" ")[0].split("px")[0];
-                            }
-                            from: 1
-                            to: 9999
-                        }
-                        
-                    }
-                }
-
-                QTCotrols.SpinBox {
-                    id: lineWidth
-                    editable: true
-                    validator: RegularExpressionValidator {
-                        regularExpression: /[0-9]?[0-9]{3}[ ]?px/
-                    }
-                    textFromValue: function(value) {
-                        return value+"px";
-                    }
-                    valueFromText: function(text) {
-                        return text.split(" ")[0].split("px")[0];
-                    }
-                    from: 1
-                    to: 9999
-                }
-                
             }
         }
     }

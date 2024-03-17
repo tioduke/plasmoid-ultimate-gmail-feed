@@ -18,9 +18,9 @@
  *  along with Ultimate Gmail Feed. If not, see <http://www.gnu.org/licenses/>.   *
  *********************************************************************************/
 
-import QtQuick 2.0
+import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts 1.1
+import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents
