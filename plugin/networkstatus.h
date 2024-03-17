@@ -33,7 +33,8 @@ public:
     explicit NetworkStatus(QObject *parent = 0);
     ~NetworkStatus();
     
-    bool isOnline() const {return m_networkInformation->reachability() == QNetworkInformation::Reachability::Online;}
+    bool isOnline() const {return true;}
+    //bool isOnline() const {return m_networkInformation->reachability() == QNetworkInformation::Reachability::Online;}
 
 private:
     QNetworkInformation *m_networkInformation;    
