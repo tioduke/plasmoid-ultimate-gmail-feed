@@ -33,10 +33,10 @@ public:
     explicit NetworkStatus(QObject *parent = 0);
     ~NetworkStatus();
     
-    bool isOnline() const {return true;}
-    //bool isOnline() const {return m_networkInformation->reachability() == QNetworkInformation::Reachability::Online;}
+    bool isOnline() const { return !m_networkInformationIsAvailable || m_networkInformation->reachability() == QNetworkInformation::Reachability::Online; }
 
 private:
+    bool m_networkInformationIsAvailable;
     QNetworkInformation *m_networkInformation;    
 
 Q_SIGNALS:
@@ -44,5 +44,3 @@ Q_SIGNALS:
 };
 
 #endif
-
-
