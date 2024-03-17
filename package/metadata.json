@@ -21,7 +21,7 @@
             "Plasma/Applet"
         ],
         "Version": "2.2",
-        "Website": "https://github.com/tiodke/plasmoid-ultimate-gmail-feed"
+        "Website": "https://github.com/tioduke/plasmoid-ultimate-gmail-feed"
     },
     "X-Plasma-DefaultSize": "200,200",
     "X-Plasma-NotificationArea": "true",
