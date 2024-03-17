@@ -15,39 +15,37 @@
  */
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 1.4
+import QtQuick.Controls 2.5 as QQC2
 import org.kde.kcmutils as KCM
+import org.kde.kirigami 2.5 as Kirigami
 
 KCM.SimpleKCM {
     id: configPageUpdater
     
     property alias cfg_checkUpdateStartup: checkUpdateStartupBox.checked
     
-    ColumnLayout {    
-        GroupBox {
-            flat: true
-            ColumnLayout {
-                Label {
-                    text: i18n("\nUpdater")
-                    font.weight: Font.Bold
-                }
-                Label {
-                    text: i18n("Plasmoid: Ultimate Gmail Feed\n")
-                }
-                Label {
-                    text: i18n("Version: 2.2")
-                }
-                Label {
-                    text: i18n("Author: TioDuke")
-                }
-                TextField {
-                    Layout.minimumWidth: 450
-                    text: 'https://github.com/tioduke/plasmoid-ultimate-gmail-feed/'
-                }
-                CheckBox {
-                    id: checkUpdateStartupBox
-                    text: i18n("Notify for update on startup (checked once on github, 5 min after startup)")
-                }
+    Kirigami.FormLayout {    
+        ColumnLayout {
+            QQC2.Label {
+                text: i18n("\nUpdater")
+                font.weight: Font.Bold
+            }
+            QQC2.Label {
+                text: i18n("Plasmoid: Ultimate Gmail Feed\n")
+            }
+            QQC2.Label {
+                text: i18n("Version: 2.2")
+            }
+            QQC2.Label {
+                text: i18n("Author: TioDuke")
+            }
+            QQC2.TextField {
+                Layout.minimumWidth: 450
+                text: 'https://github.com/tioduke/plasmoid-ultimate-gmail-feed/'
+            }
+            QQC2.CheckBox {
+                id: checkUpdateStartupBox
+                text: i18n("Notify for update on startup (checked once on github, 5 min after startup)")
             }
         }
     }

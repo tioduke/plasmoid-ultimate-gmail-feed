@@ -18,14 +18,12 @@
  *  along with Ultimate Gmail Feed. If not, see <http://www.gnu.org/licenses/>.   *
  *********************************************************************************/
 
-import QtQuick 2.0
-import QtQuick.Controls 1.0
-import QtQuick.Controls 1.2
-import QtQuick.Layouts 1.0
-import QtQuick.Layouts 1.0 as QtLayouts
-import QtQuick.Controls 1.0 as QtControls
-import org.kde.plasma.components as PlasmaComponents
+import QtQuick 2.5
+import QtQuick.Layouts 1.1 as QtLayouts
+import QtQuick.Controls 2.5 as QtControls
 import org.kde.kcmutils as KCM
+import org.kde.kirigami 2.5 as Kirigami
+import org.kde.plasma.components as PlasmaComponents
 
 KCM.SimpleKCM {
     id: generalPage
@@ -41,16 +39,17 @@ KCM.SimpleKCM {
     property alias cfg_lineHeight: lineHeight.value
     property alias cfg_lineWidth: lineWidth.value
     
-    QtLayouts.ColumnLayout {
-        anchors.left: parent.left
+    Kirigami.FormLayout {    
         QtLayouts.ColumnLayout {
-        
-            QtControls.GroupBox {
-            QtLayouts.Layout.fillWidth: true
-            flat: true
+            anchors.left: parent.left
+            QtLayouts.ColumnLayout {
+            
+                QtControls.GroupBox {
+                QtLayouts.Layout.fillWidth: true
+                flat: true
 
-                QtLayouts.ColumnLayout {
-                    
+                    QtLayouts.ColumnLayout {
+                        
                         QtControls.CheckBox {
                             id: invertMailListCheckbox
                             text: i18n("Invert mail list order")                            
@@ -72,7 +71,7 @@ KCM.SimpleKCM {
                                 text: i18n("Popup height (work outside system tray) : ")
                             }
 
-                            SpinBox {
+                            QtControls.SpinBox {
                                 id: popupHeight
                                 suffix: i18ncp("Popup height in px", "px", "px", value)
                                 Layout.fillWidth: true
@@ -88,7 +87,7 @@ KCM.SimpleKCM {
                                 text: i18n("Popup width (work outside system tray) : ")
                             }
 
-                            SpinBox {
+                            QtControls.SpinBox {
                                 id: popupWidth
                                 suffix: i18ncp("Popup width in px", "px", "px", value)
                                 Layout.fillWidth: true
@@ -129,6 +128,7 @@ KCM.SimpleKCM {
                             }
                             
                         }
+                    }
                 }
             }
         }
