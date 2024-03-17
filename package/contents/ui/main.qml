@@ -18,7 +18,7 @@
  *  along with Ultimate Gmail Feed. If not, see <http://www.gnu.org/licenses/>.   *
  *********************************************************************************/
 
-import QtQuick 2.0
+import QtQuick
 import QtQml.XmlListModel
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasma5support as Plasma5Support
