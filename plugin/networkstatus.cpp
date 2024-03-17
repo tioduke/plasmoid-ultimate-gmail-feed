@@ -24,7 +24,7 @@ NetworkStatus::NetworkStatus(QObject *parent)
     : QObject(parent)
 {
     m_networkInformation = QNetworkInformation::instance();
-    if (m_netowrkInformation != null && m_networkInformation->supports(QNetworkInformation::Feature::Reachability))
+    if (m_netowrkInformation != NULL && m_networkInformation->supports(QNetworkInformation::Feature::Reachability))
     {
     	connect(QNetworkInformation::instance(), SIGNAL(reachabilityChanged(bool)), this, SIGNAL(isOnlineChanged()));
     }
