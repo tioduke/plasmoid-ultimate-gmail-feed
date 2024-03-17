@@ -23,11 +23,11 @@
 NetworkStatus::NetworkStatus(QObject *parent)
     : QObject(parent)
 {
-    m_networkInformation = QNetworkInformation::instance();
-    if (m_networkInformation != NULL && m_networkInformation->supports(QNetworkInformation::Feature::Reachability))
-    {
-    	connect(m_networkInformation, SIGNAL(reachabilityChanged(bool)), this, SIGNAL(isOnlineChanged()));
-    }
+    //m_networkInformation = QNetworkInformation::instance();
+    //if (m_networkInformation != NULL && m_networkInformation->supports(QNetworkInformation::Feature::Reachability))
+    //{
+    //	connect(m_networkInformation, SIGNAL(reachabilityChanged(bool)), this, SIGNAL(isOnlineChanged()));
+    //}
 }
 
 NetworkStatus::~NetworkStatus()
