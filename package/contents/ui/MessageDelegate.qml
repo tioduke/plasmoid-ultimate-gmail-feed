@@ -19,10 +19,11 @@
  *********************************************************************************/
 
 import QtQuick 2.0
+import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasmoid
 
-PlasmaComponents.ListItem {
+PlasmaExtras.ListItem {
     id: listItem
     enabled: true
     

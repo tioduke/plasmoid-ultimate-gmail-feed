@@ -84,14 +84,13 @@ PlasmoidItem {
         property int newMailId: -1
 
         source: ""
-        //query: "/"
         query: "/"
-        namespaceDeclarations: "declare default element namespace 'http://purl.org/atom/ns#';"
+        //namespaceDeclarations: "declare default element namespace 'http://purl.org/atom/ns#';"
         
-        XmlRole { name: "author"; query: "author/name/string()" }
-        XmlRole { name: "title"; query: "title/string()" }
-        XmlRole { name: "link"; query: "link/@href/string()" }
-        XmlRole { name: "id"; query: "id/string()"; isKey: true }
+        XmlListModelRole { name: "author"; elementName: "author/name" }
+        XmlListModelRole { name: "title"; elementName: "title" }
+        XmlListModelRole { name: "link"; elementName: "link"; attributeName: "href" }
+        XmlListModelRole { name: "id"; elementName: "id" }
         
         onRowsInserted: {
             newMailCount += last-first+1
@@ -250,15 +249,21 @@ PlasmoidItem {
         PlasmaCore.Action {
             text: i18n("Check mail")
             icon.name: "mail-receive"
-            separator: true
             onTriggered: action_checkMail()
+        },
+        PlasmaCore.Action {
+            id: separator1
+            isSeparator: true
         },
         // Updater 3/3 ==============================================================================================================================
         PlasmaCore.Action {
             text: i18n("Check for updates on github")
             icon.name: "view-grid"
-            separator: true
             onTriggered: action_checkUpdate()
+        },
+        PlasmaCore.Action {
+            id: separator2
+            isSeparator: true
         }
         // ==========================================================================================================================================
     ]

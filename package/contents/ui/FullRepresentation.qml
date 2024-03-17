@@ -19,6 +19,7 @@
  *********************************************************************************/
 
 import QtQuick 2.0
+import QtQuick.Controls
 import QtQuick.Layouts 1.1
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.extras as PlasmaExtras
@@ -53,12 +54,12 @@ Item {
         anchors.right: parent.right
         anchors.top: parent.top
         height: units.iconSizes.medium
-        iconSource: "folder-mail"
-        tooltip: i18n("Open inbox")
+        icon.name: "folder-mail"
+        ToolTip.text: i18n("Open inbox")
         onClicked: mainItem.action_openInbox()
     }
     
-    PlasmaExtras.ScrollArea {
+    ScrollView {
         id: scrollView;
 
         anchors.top: heading.height > inboxIcon.height ? heading.bottom : inboxIcon.bottom
@@ -78,7 +79,7 @@ Item {
             currentIndex: -1;
             boundsBehavior: Flickable.StopAtBounds;
             focus: true
-            highlight: PlasmaComponents.Highlight {}
+            highlight: PlasmaExtras.Highlight {}
             delegate: MessageDelegate {
                 onContainsMouseChanged: inboxView.currentIndex = containsMouse ? index : -1
             }
