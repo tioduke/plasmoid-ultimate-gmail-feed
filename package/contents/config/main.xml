@@ -20,7 +20,7 @@
       <default>true</default>
     </entry>
       
-    <entry name="multiLineCode" type="string">
+    <entry name="multiLineCode" type="String">
       <whatsthis>Display sender and subject in different line</whatsthis>
       <default>br/</default>
     </entry>
@@ -40,37 +40,37 @@
       <default>true</default>
     </entry>     
       
-    <entry name="userName" type="string">
+    <entry name="userName" type="String">
       <whatsthis>eMail username</whatsthis>
       <default></default>
     </entry>    
       
-    <entry name="realM" type="string">
+    <entry name="realM" type="String">
       <whatsthis>eMail realm</whatsthis>
       <default>gmail.com</default>
     </entry>   
       
-    <entry name="serverURL" type="string">
+    <entry name="serverURL" type="String">
       <whatsthis>RSS Server</whatsthis>
       <default>mail.google.com/mail/feed/atom</default>
     </entry>
       
-    <entry name="serverQuery" type="string">
+    <entry name="serverQuery" type="String">
       <whatsthis>RSS Server Query</whatsthis>
       <default>/feed/entry</default>
     </entry>
       
-    <entry name="transProt" type="string">
+    <entry name="transProt" type="String">
       <whatsthis>Transfert Protocol</whatsthis>
       <default>https://</default>
     </entry>
       
-    <entry name="commandOpen" type="string">
+    <entry name="commandOpen" type="String">
       <whatsthis>Command to run on Open inbox</whatsthis>
       <default>thunderbird</default>
     </entry>
       
-    <entry name="commandOpenMail" type="string">
+    <entry name="commandOpenMail" type="String">
       <whatsthis>Command to run on Mail click </whatsthis>
       <default>thunderbird</default>
     </entry>

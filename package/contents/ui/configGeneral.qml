@@ -28,7 +28,7 @@ import org.kde.kcmutils as KCM
 import org.kde.plasma.components as PlasmaComponents
 
 KCM.SimpleKCM {
-    id: generalPage
+    id: configPageGeneral
     
     width: childrenRect.width
     height: childrenRect.height
