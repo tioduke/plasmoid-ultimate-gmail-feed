@@ -17,15 +17,11 @@
  *  You should have received a copy of the GNU General Public License             *
  *  along with Ultimate Gmail Feed. If not, see <http://www.gnu.org/licenses/>.   *
  *********************************************************************************/
-
-import QtQuick 2.0
-import QtQuick.Controls 1.0
-import QtQuick.Controls 1.2
-import QtQuick.Layouts 1.0
-import QtQuick.Layouts 1.0 as QtLayouts
-import QtQuick.Controls 1.0 as QtControls
+import QtQuick
+import QtQuick.Controls as QtControls
+import QtQuick.Layouts
 import org.kde.kcmutils as KCM
-import org.kde.plasma.components as PlasmaComponents
+import org.kde.kirigami as Kirigami
 
 KCM.SimpleKCM {
     id: configPageGeneral
@@ -46,148 +42,103 @@ KCM.SimpleKCM {
     property alias cfg_commandOpen: commandOpen.text
     property alias cfg_commandOpenMail: commandOpenMail.text
     
-    QtLayouts.ColumnLayout {
-        anchors.left: parent.left
-        QtLayouts.ColumnLayout {
-        
-            QtControls.GroupBox {
-            QtLayouts.Layout.fillWidth: true
-            flat: true
+    ColumnLayout {
 
-                QtLayouts.ColumnLayout {
-                
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("Email account : ")
-                            }
+        Kirigami.FormLayout {
 
-                            TextField {
-                                id: userName
-                                Layout.fillWidth: true
-                                text: i18n(cfg_userName)
-                            }
-                            
-                            PlasmaComponents.Label {
-                                text: i18n("@")
-                            }
-                            
-                            TextField {
-                                id: realM
-                                Layout.fillWidth: true
-                                text: i18n(cfg_realM)
-                            }
-                            
-                        }
-                        
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("Transfer Protocol : ")
-                            }
-
-                            TextField {
-                                id: transProt
-                                Layout.fillWidth: true
-                                text: i18n(cfg_transProt)
-                            }
-                            
-                        }
-                        
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("RSS Server : ")
-                            }
-
-                            TextField {
-                                id: serverURL
-                                Layout.fillWidth: true
-                                text: i18n(cfg_serverURL)
-                            }
-                            
-                        }
-                        
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("Server Query : ")
-                            }
-
-                            TextField {
-                                id: serverQuery
-                                Layout.fillWidth: true
-                                text: i18n(cfg_serverQuery)
-                            }
-                            
-                        }
-                        
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("Command to run on 'Open inbox' : ")
-                            }
-
-                            TextField {
-                                id: commandOpen
-                                Layout.fillWidth: true
-                                text: i18n(cfg_commandOpen)
-                            }
-                            
-                        }
-                        
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("Command to run on 'eMail click' : ")
-                            }
-
-                            TextField {
-                                id: commandOpenMail
-                                Layout.fillWidth: true
-                                text: i18n(cfg_commandOpenMail)
-                            }
-                            
-                        }
-                        
-                        QtLayouts.RowLayout {
-                        
-                            PlasmaComponents.Label {
-                                text: i18n("Polling interval :")
-                            }
-
-                            SpinBox {
-                                id: spinbox
-                                suffix: i18ncp("Polling interval in minutes", "min", "min", value)
-                                Layout.fillWidth: true
-                                minimumValue: 1
-                                maximumValue: 999999
-                            }
-                            
-                        }
-                
-                        QtControls.CheckBox {
-                            id: manualCheckCheckbox
-                            text: i18n("Check mailbox manually only (ignore polling interval)")
-                        }
-                        
-                        QtControls.CheckBox {
-                            id: multiLineCheckbox
-                            text: i18n("Display message subject in a new line")                            
-                        }
-                            
-                        QtControls.CheckBox {
-                            id: openURLInsteadMail
-                            text: i18n("Open email link instead of a command on 'eMail click'")
-                        }
-                        
-                        QtControls.CheckBox {
-                            id: openURLInsteadMain
-                            text: i18n("Open email link instead of a command on 'Open inbox'")
-                        }
-                        
+            RowLayout {          
+                QtControls.Label {
+                    text: i18n("Email account : ")
                 }
+                QtControls.TextField {
+                    id: userName
+                    Layout.fillWidth: true
+                    text: i18n(cfg_userName)
+                }
+                QtControls.Label {
+                    text: i18n("@")
+                }
+                QtControls.TextField {
+                    id: realM
+                    Layout.fillWidth: true
+                    text: i18n(cfg_realM)
+                }             
             }
+            
+        }
+            
+        Kirigami.FormLayout {
+
+            QtControls.TextField {
+                id: transProt
+                Kirigami.FormData.label: i18nc("@label", "Transfer Protocol :")
+                Layout.fillWidth: true
+                text: i18n(cfg_transProt)
+            }
+                        
+            QtControls.TextField {
+                id: serverURL
+                Kirigami.FormData.label: i18nc("@label", "RSS Server :")
+                Layout.fillWidth: true
+                text: i18n(cfg_serverURL)
+            }
+            
+            QtControls.TextField {
+                id: serverQuery
+                Kirigami.FormData.label: i18nc("@label", "Server Query :")
+                Layout.fillWidth: true
+                text: i18n(cfg_serverQuery)
+            }
+            
+            QtControls.TextField {
+                id: commandOpen
+                Kirigami.FormData.label: i18nc("@label", "Command to run on 'Open inbox' :")
+                Layout.fillWidth: true
+                text: i18n(cfg_commandOpen)
+            }
+            
+            QtControls.TextField {
+                id: commandOpenMail
+                Kirigami.FormData.label: i18nc("@label", "Command to run on 'eMail click' :")
+                Layout.fillWidth: true
+                text: i18n(cfg_commandOpenMail)
+            }
+            
+            QtControls.SpinBox {
+                id: spinbox
+                Kirigami.FormData.label: i18nc("@label", "Polling interval :")
+                Layout.fillWidth: true
+                from: 1
+                to: 999999
+                textFromValue: function(value, locale) {
+                    return qsTr("%1 min").arg(value);
+                }   
+            }
+            
+        }
+            
+        Kirigami.FormLayout {
+
+            QtControls.CheckBox {
+                id: manualCheckCheckbox
+                text: i18n("Check mailbox manually only (ignore polling interval)")
+            }
+            
+            QtControls.CheckBox {
+                id: multiLineCheckbox
+                text: i18n("Display message subject in a new line")                            
+            }
+                
+            QtControls.CheckBox {
+                id: openURLInsteadMail
+                text: i18n("Open email link instead of a command on 'eMail click'")
+            }
+            
+            QtControls.CheckBox {
+                id: openURLInsteadMain
+                text: i18n("Open email link instead of a command on 'Open inbox'")
+            }
+            
         }
     }
 } 
